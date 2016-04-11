@@ -14,6 +14,8 @@
 		ACC957B61CBAFC08002F43F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC957B51CBAFC08002F43F8 /* Assets.xcassets */; };
 		ACC957B91CBAFC08002F43F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC957B71CBAFC08002F43F8 /* LaunchScreen.storyboard */; };
 		ACC957C41CBAFC09002F43F8 /* LockNKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957C31CBAFC08002F43F8 /* LockNKeyTests.swift */; };
+		ACC957CF1CBAFFC3002F43F8 /* LockNKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957CE1CBAFFC3002F43F8 /* LockNKey.swift */; };
+		ACC957D11CBB24D1002F43F8 /* AddNewLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957D01CBB24D1002F43F8 /* AddNewLockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		ACC957BF1CBAFC08002F43F8 /* LockNKeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockNKeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC957C31CBAFC08002F43F8 /* LockNKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockNKeyTests.swift; sourceTree = "<group>"; };
 		ACC957C51CBAFC09002F43F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACC957CE1CBAFFC3002F43F8 /* LockNKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockNKey.swift; sourceTree = "<group>"; };
+		ACC957D01CBB24D1002F43F8 /* AddNewLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewLockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				ACC957AC1CBAFC08002F43F8 /* AppDelegate.swift */,
 				ACC957AE1CBAFC08002F43F8 /* MasterViewController.swift */,
 				ACC957B01CBAFC08002F43F8 /* DetailViewController.swift */,
+				ACC957CE1CBAFFC3002F43F8 /* LockNKey.swift */,
+				ACC957D01CBB24D1002F43F8 /* AddNewLockViewController.swift */,
 				ACC957B21CBAFC08002F43F8 /* Main.storyboard */,
 				ACC957B51CBAFC08002F43F8 /* Assets.xcassets */,
 				ACC957B71CBAFC08002F43F8 /* LaunchScreen.storyboard */,
@@ -203,7 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC957B11CBAFC08002F43F8 /* DetailViewController.swift in Sources */,
+				ACC957CF1CBAFFC3002F43F8 /* LockNKey.swift in Sources */,
 				ACC957AF1CBAFC08002F43F8 /* MasterViewController.swift in Sources */,
+				ACC957D11CBB24D1002F43F8 /* AddNewLockViewController.swift in Sources */,
 				ACC957AD1CBAFC08002F43F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

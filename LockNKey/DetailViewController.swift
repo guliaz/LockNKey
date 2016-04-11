@@ -9,23 +9,28 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    // MARK : Properties
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    var detailItem: AnyObject? {
+    @IBOutlet weak var companyLabelValue: UILabel!
+    @IBOutlet weak var usernameLabelValue: UILabel!
+    @IBOutlet weak var passwordLabelValue: UILabel!
+    @IBOutlet weak var urlLabelValue: UILabel!
+    
+    var detailItem: LockNKey? {
         didSet {
             // Update the view.
-            self.configureView()
+            // self.configureView()
         }
     }
 
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
+            companyLabelValue.text = detail.companyName
+            usernameLabelValue.text = detail.userName
+            passwordLabelValue.text = detail.password
+            urlLabelValue.text = detail.url
         }
     }
 
