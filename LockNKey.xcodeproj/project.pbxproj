@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC13E8B21CF6C26F00A33BBF /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13E8B11CF6C26F00A33BBF /* PinCodeViewController.swift */; };
+		ACA1F5E01CD1D26300E638DF /* LockNKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1F5DF1CD1D26300E638DF /* LockNKeyStore.swift */; };
+		ACA1F5E21CD5A07D00E638DF /* EditLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1F5E11CD5A07D00E638DF /* EditLockViewController.swift */; };
+		ACA1F5E41CD5A44500E638DF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1F5E31CD5A44500E638DF /* Common.swift */; };
 		ACC957AD1CBAFC08002F43F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957AC1CBAFC08002F43F8 /* AppDelegate.swift */; };
 		ACC957AF1CBAFC08002F43F8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957AE1CBAFC08002F43F8 /* MasterViewController.swift */; };
 		ACC957B11CBAFC08002F43F8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957B01CBAFC08002F43F8 /* DetailViewController.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC13E8B11CF6C26F00A33BBF /* PinCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
+		ACA1F5DF1CD1D26300E638DF /* LockNKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockNKeyStore.swift; sourceTree = "<group>"; };
+		ACA1F5E11CD5A07D00E638DF /* EditLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLockViewController.swift; sourceTree = "<group>"; };
+		ACA1F5E31CD5A44500E638DF /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		ACC957A91CBAFC08002F43F8 /* LockNKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockNKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC957AC1CBAFC08002F43F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC957AE1CBAFC08002F43F8 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +95,11 @@
 				ACC957AE1CBAFC08002F43F8 /* MasterViewController.swift */,
 				ACC957B01CBAFC08002F43F8 /* DetailViewController.swift */,
 				ACC957CE1CBAFFC3002F43F8 /* LockNKey.swift */,
+				ACA1F5DF1CD1D26300E638DF /* LockNKeyStore.swift */,
 				ACC957D01CBB24D1002F43F8 /* AddNewLockViewController.swift */,
+				ACA1F5E11CD5A07D00E638DF /* EditLockViewController.swift */,
+				AC13E8B11CF6C26F00A33BBF /* PinCodeViewController.swift */,
+				ACA1F5E31CD5A44500E638DF /* Common.swift */,
 				ACC957B21CBAFC08002F43F8 /* Main.storyboard */,
 				ACC957B51CBAFC08002F43F8 /* Assets.xcassets */,
 				ACC957B71CBAFC08002F43F8 /* LaunchScreen.storyboard */,
@@ -208,9 +220,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA1F5E41CD5A44500E638DF /* Common.swift in Sources */,
 				ACC957B11CBAFC08002F43F8 /* DetailViewController.swift in Sources */,
 				ACC957CF1CBAFFC3002F43F8 /* LockNKey.swift in Sources */,
 				ACC957AF1CBAFC08002F43F8 /* MasterViewController.swift in Sources */,
+				ACA1F5E01CD1D26300E638DF /* LockNKeyStore.swift in Sources */,
+				ACA1F5E21CD5A07D00E638DF /* EditLockViewController.swift in Sources */,
+				AC13E8B21CF6C26F00A33BBF /* PinCodeViewController.swift in Sources */,
 				ACC957D11CBB24D1002F43F8 /* AddNewLockViewController.swift in Sources */,
 				ACC957AD1CBAFC08002F43F8 /* AppDelegate.swift in Sources */,
 			);
@@ -404,6 +420,7 @@
 				ACC957CA1CBAFC09002F43F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACC957CB1CBAFC09002F43F8 /* Build configuration list for PBXNativeTarget "LockNKeyTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +429,7 @@
 				ACC957CD1CBAFC09002F43F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

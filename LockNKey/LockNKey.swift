@@ -21,9 +21,9 @@ class LockNKey: NSObject, NSCoding {
     
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("lockNKeys")
+    static let PinArchiveFile = DocumentsDirectory.URLByAppendingPathComponent("pinFilePath")
     
     // MARK: Types
-    
     struct PropertyKey {
         static let companyKey = "company"
         static let usernameKey = "username"
