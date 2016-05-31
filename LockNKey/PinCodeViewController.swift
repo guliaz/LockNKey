@@ -42,7 +42,6 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate
-    
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let currentCharacterCount = textField.text?.characters.count ?? 0
         if (range.length + range.location > currentCharacterCount){
@@ -74,7 +73,6 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK : Logic methods
-    
     func goBackToDetailView()  {
         self.performSegueWithIdentifier("unwindToDetailViewFromPin", sender: self)
     }
@@ -82,7 +80,7 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate {
     func goToSplitView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // MasterController | SplitViewController
-        let vc: UISplitViewController = storyboard.instantiateViewControllerWithIdentifier("SplitViewController") as! UISplitViewController
+        let vc: UINavigationController = storyboard.instantiateViewControllerWithIdentifier("MasterController") as! UINavigationController
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -96,7 +94,7 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate {
                 goBackToDetailView()
             }
         } else {
-            
+            self.isValidPin = false
         }
     }
 }

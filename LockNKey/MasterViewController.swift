@@ -60,16 +60,19 @@ class MasterViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = indexPath.row
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
+//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+//                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
+    }
+    
+    @IBAction func unwindBack(segue:UIStoryboardSegue){
+        
     }
     
     @IBAction func unwindToList(segue:UIStoryboardSegue) {
         let sourceController:AddNewLockViewController = segue.sourceViewController as! AddNewLockViewController
         let lockNKey = sourceController.lockNKey
-        
         if lockNKey != nil {
             LockNKeyStore.sharedInstance.addLockNKey(lockNKey)
             LockNKeyStore.sharedInstance.saveLocks()

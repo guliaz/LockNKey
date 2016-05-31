@@ -37,30 +37,30 @@ class PinSetViewController: UIViewController, UITextFieldDelegate {
         return newLength <= 4
     }
     
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        if(textField.text! != "" && textField.text!.characters.count == 4){
-//            if(textField == pinTextField1){
-//                pin1 = textField.text!
-//            }
-//            if(textField == pinTextField2){
-//                pin2 = textField.text!
-//            }
-//        }
-//        // Hide the keyboard.
-//        textField.resignFirstResponder()
-//        return true
-//    }
+    //    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    //        if(textField.text! != "" && textField.text!.characters.count == 4){
+    //            if(textField == pinTextField1){
+    //                pin1 = textField.text!
+    //            }
+    //            if(textField == pinTextField2){
+    //                pin2 = textField.text!
+    //            }
+    //        }
+    //        // Hide the keyboard.
+    //        textField.resignFirstResponder()
+    //        return true
+    //    }
     
-//    func textFieldDidBeginEditing(textField: UITextField) {
-//        if(textField.text! != "" && textField.text!.characters.count == 4){
-//            if(textField == pinTextField1){
-//                pin1 = textField.text!
-//            }
-//            if(textField == pinTextField2){
-//                pin2 = textField.text!
-//            }
-//        }
-//    }
+    //    func textFieldDidBeginEditing(textField: UITextField) {
+    //        if(textField.text! != "" && textField.text!.characters.count == 4){
+    //            if(textField == pinTextField1){
+    //                pin1 = textField.text!
+    //            }
+    //            if(textField == pinTextField2){
+    //                pin2 = textField.text!
+    //            }
+    //        }
+    //    }
     
     func textFieldDidEndEditing(textField: UITextField) {
         if(textField.text! != "" && textField.text!.characters.count == 4){
@@ -74,10 +74,9 @@ class PinSetViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK : Logic methods
-    
     func goToSplitView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc: UISplitViewController = storyboard.instantiateViewControllerWithIdentifier("SplitViewController") as! UISplitViewController
+        let vc: UINavigationController = storyboard.instantiateViewControllerWithIdentifier("MasterController") as! UINavigationController
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -96,6 +95,4 @@ class PinSetViewController: UIViewController, UITextFieldDelegate {
             pinTextField1.becomeFirstResponder()
         }
     }
-
-    
 }
