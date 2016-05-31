@@ -81,7 +81,7 @@ class LockNKeyStore {
         if let base64Decoded = NSData(base64EncodedString: str, options:   NSDataBase64DecodingOptions(rawValue: 0))
             .map({ NSString(data: $0, encoding: NSUTF8StringEncoding) }){
             // Convert back to a string
-            print("Decoded:  \(base64Decoded)")
+            //print("Decoded:  \(base64Decoded)")
             return base64Decoded as! String
         }
         return ""

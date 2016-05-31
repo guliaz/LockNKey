@@ -66,8 +66,12 @@ class DetailViewController: UIViewController {
             let uiText = uiLabel.text
             if uiText != nil && uiText == maskedPassword{
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("PinCodeView")
+                let vc = storyboard.instantiateViewControllerWithIdentifier("PinCodeView") as! PinCodeViewController
+                vc.isAfterLoad = false
                 self.presentViewController(vc, animated: true, completion: nil)
+            } else{
+                showPassword = false
+                showPass()
             }
         }
     }
@@ -88,16 +92,16 @@ class DetailViewController: UIViewController {
         }
     }
     
-    // MARK: - Segues
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "editLock" {
-            let controller = (segue.destinationViewController as! UINavigationController).topViewController as! EditLockViewController
-            controller.lockNKey = self.lockNKey
-        }
+    @IBAction func showEditView(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AddEditLockView") as! AddNewLockViewController
+        vc.setEditController()
+        vc.lockNKey = self.lockNKey
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     @IBAction func unwindToDetailView(segue:UIStoryboardSegue) {
-        let sourceController = segue.sourceViewController as! EditLockViewController
+        let sourceController = segue.sourceViewController as! AddNewLockViewController
         let lockNKey = sourceController.lockNKey
         
         if lockNKey != nil {
@@ -119,8 +123,6 @@ class DetailViewController: UIViewController {
         }
         showPass()
     }
-    
-    
     
     func valueChanged(notification:NSNotification) {
         if let notificationLock = notification.object as? LockNKey{

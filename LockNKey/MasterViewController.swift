@@ -32,7 +32,7 @@ class MasterViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
+        //self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         reloadTable()
         super.viewWillAppear(animated)
     }
@@ -66,7 +66,6 @@ class MasterViewController: UITableViewController {
         }
     }
     
-    
     @IBAction func unwindToList(segue:UIStoryboardSegue) {
         let sourceController:AddNewLockViewController = segue.sourceViewController as! AddNewLockViewController
         let lockNKey = sourceController.lockNKey
@@ -77,6 +76,13 @@ class MasterViewController: UITableViewController {
             NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "AddedItemInMaster", object: lockNKey))
             self.tableView.reloadData()
         }
+    }
+    
+    @IBAction func showAddView(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AddEditLockView") as! AddNewLockViewController
+        vc.setAddController()
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     // MARK: - Table View

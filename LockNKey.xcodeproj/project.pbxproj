@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AC13E8B21CF6C26F00A33BBF /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13E8B11CF6C26F00A33BBF /* PinCodeViewController.swift */; };
 		ACA1F5E01CD1D26300E638DF /* LockNKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1F5DF1CD1D26300E638DF /* LockNKeyStore.swift */; };
-		ACA1F5E21CD5A07D00E638DF /* EditLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1F5E11CD5A07D00E638DF /* EditLockViewController.swift */; };
 		ACA1F5E41CD5A44500E638DF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1F5E31CD5A44500E638DF /* Common.swift */; };
 		ACC957AD1CBAFC08002F43F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957AC1CBAFC08002F43F8 /* AppDelegate.swift */; };
 		ACC957AF1CBAFC08002F43F8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957AE1CBAFC08002F43F8 /* MasterViewController.swift */; };
@@ -20,6 +19,7 @@
 		ACC957C41CBAFC09002F43F8 /* LockNKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957C31CBAFC08002F43F8 /* LockNKeyTests.swift */; };
 		ACC957CF1CBAFFC3002F43F8 /* LockNKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957CE1CBAFFC3002F43F8 /* LockNKey.swift */; };
 		ACC957D11CBB24D1002F43F8 /* AddNewLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC957D01CBB24D1002F43F8 /* AddNewLockViewController.swift */; };
+		ACDE23CA1CFBB02F00D88C81 /* PinSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDE23C91CFBB02F00D88C81 /* PinSetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 /* Begin PBXFileReference section */
 		AC13E8B11CF6C26F00A33BBF /* PinCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
 		ACA1F5DF1CD1D26300E638DF /* LockNKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockNKeyStore.swift; sourceTree = "<group>"; };
-		ACA1F5E11CD5A07D00E638DF /* EditLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLockViewController.swift; sourceTree = "<group>"; };
 		ACA1F5E31CD5A44500E638DF /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		ACC957A91CBAFC08002F43F8 /* LockNKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockNKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC957AC1CBAFC08002F43F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		ACC957C51CBAFC09002F43F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACC957CE1CBAFFC3002F43F8 /* LockNKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockNKey.swift; sourceTree = "<group>"; };
 		ACC957D01CBB24D1002F43F8 /* AddNewLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewLockViewController.swift; sourceTree = "<group>"; };
+		ACDE23C91CFBB02F00D88C81 /* PinSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinSetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 				ACC957CE1CBAFFC3002F43F8 /* LockNKey.swift */,
 				ACA1F5DF1CD1D26300E638DF /* LockNKeyStore.swift */,
 				ACC957D01CBB24D1002F43F8 /* AddNewLockViewController.swift */,
-				ACA1F5E11CD5A07D00E638DF /* EditLockViewController.swift */,
 				AC13E8B11CF6C26F00A33BBF /* PinCodeViewController.swift */,
+				ACDE23C91CFBB02F00D88C81 /* PinSetViewController.swift */,
 				ACA1F5E31CD5A44500E638DF /* Common.swift */,
 				ACC957B21CBAFC08002F43F8 /* Main.storyboard */,
 				ACC957B51CBAFC08002F43F8 /* Assets.xcassets */,
@@ -225,10 +225,10 @@
 				ACC957CF1CBAFFC3002F43F8 /* LockNKey.swift in Sources */,
 				ACC957AF1CBAFC08002F43F8 /* MasterViewController.swift in Sources */,
 				ACA1F5E01CD1D26300E638DF /* LockNKeyStore.swift in Sources */,
-				ACA1F5E21CD5A07D00E638DF /* EditLockViewController.swift in Sources */,
 				AC13E8B21CF6C26F00A33BBF /* PinCodeViewController.swift in Sources */,
 				ACC957D11CBB24D1002F43F8 /* AddNewLockViewController.swift in Sources */,
 				ACC957AD1CBAFC08002F43F8 /* AppDelegate.swift in Sources */,
+				ACDE23CA1CFBB02F00D88C81 /* PinSetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

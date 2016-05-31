@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Master Controller-->
+        <!--MasterController-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController title="Master Controller" id="RMx-3f-FxP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MasterController" title="MasterController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0014104155070000001" green="0.62371794869999997" blue="0.3900077609" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,7 +119,7 @@
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="uKQ-RI-sGK">
                             <connections>
-                                <segue destination="aue-Lc-hGn" kind="presentation" identifier="editLock" modalTransitionStyle="flipHorizontal" id="CEq-yy-M0Y"/>
+                                <action selector="showEditView" destination="JEX-9P-axG" id="8Mw-id-NSm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -146,7 +146,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pin" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="skD-SW-uxk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pin" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="skD-SW-uxk">
                                 <rect key="frame" x="200" y="70" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FQQ-wz-HbF"/>
@@ -156,7 +156,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqN-f2-5iv">
-                                <rect key="frame" x="268" y="139" width="65" height="30"/>
+                                <rect key="frame" x="268" y="172" width="65" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="RW3-g2-dLa"/>
                                     <constraint firstAttribute="height" constant="30" id="TiZ-3V-Ga0"/>
@@ -175,17 +175,41 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRm-4d-s7Z">
+                                <rect key="frame" x="268" y="127" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GcF-xi-VxL"/>
+                                    <constraint firstAttribute="width" constant="65" id="TGn-eG-gvC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="TqN-f2-5iv" firstAttribute="top" secondItem="skD-SW-uxk" secondAttribute="bottom" constant="29" id="A1g-S1-yFV"/>
+                            <constraint firstItem="LRm-4d-s7Z" firstAttribute="top" secondItem="skD-SW-uxk" secondAttribute="bottom" constant="17" id="9Fg-oY-kR2"/>
                             <constraint firstItem="skD-SW-uxk" firstAttribute="centerX" secondItem="WCv-Tc-2J9" secondAttribute="centerX" id="HKh-La-ffL"/>
+                            <constraint firstItem="LRm-4d-s7Z" firstAttribute="centerX" secondItem="WCv-Tc-2J9" secondAttribute="centerX" id="Iyo-lE-Avc"/>
+                            <constraint firstItem="TqN-f2-5iv" firstAttribute="top" secondItem="LRm-4d-s7Z" secondAttribute="bottom" constant="15" id="MSs-aA-efM"/>
                             <constraint firstItem="TqN-f2-5iv" firstAttribute="centerX" secondItem="WCv-Tc-2J9" secondAttribute="centerX" id="uMK-Ys-D7d"/>
                             <constraint firstItem="skD-SW-uxk" firstAttribute="top" secondItem="eYi-kv-qSd" secondAttribute="bottom" constant="50" id="zpW-vw-g1a"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="TqN-f2-5iv" id="xl1-4p-168"/>
+                        <outlet property="doneButton" destination="LRm-4d-s7Z" id="0Uy-z2-ZFP"/>
                         <outlet property="pinCodeTextField" destination="skD-SW-uxk" id="NQl-DP-mox"/>
                         <segue destination="JvV-Vg-vYG" kind="unwind" identifier="unwindToDetailViewFromPin" unwindAction="unwindToDetailViewFromPin:" id="mEf-Hm-97h"/>
                     </connections>
@@ -193,12 +217,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFi-58-lxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JvV-Vg-vYG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="850"/>
+            <point key="canvasLocation" x="-1635" y="-630"/>
         </scene>
-        <!--Split View Controller-->
+        <!--SplitViewController-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
-                <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="SplitViewController" title="SplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H1p-Uh-vWS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
@@ -212,7 +236,7 @@
         <!--Master List Controller-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master List Controller" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="LockNKey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MasterListController" title="Master List Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="LockNKey" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,7 +281,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dJg-pc-jyn">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Q8B-hC-16A" kind="presentation" id="gwS-GA-KwZ"/>
+                                <action selector="showAddView" destination="7bK-jq-Zjz" id="KZC-fo-uV9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -266,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
-        <!--Add New Lock View-->
+        <!--AddEditLockView-->
         <scene sceneID="9Ym-bZ-u3b">
             <objects>
-                <viewController title="Add New Lock View" id="tGQ-uZ-DPt" customClass="AddNewLockViewController" customModule="LockNKey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEditLockView" title="AddEditLockView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tGQ-uZ-DPt" customClass="AddNewLockViewController" customModule="LockNKey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ujj-70-lyz"/>
                         <viewControllerLayoutGuide type="bottom" id="eXk-bl-dcD"/>
@@ -279,7 +303,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Apa-bu-e1Z">
-                                <rect key="frame" x="20" y="84" width="560" height="260"/>
+                                <rect key="frame" x="20" y="72" width="560" height="260"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78F-V5-0IU">
                                         <rect key="frame" x="0.0" y="0.0" width="82" height="21"/>
@@ -328,72 +352,65 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="BqY-Ua-j4n" firstAttribute="leading" secondItem="Apa-bu-e1Z" secondAttribute="leading" id="0ZN-TS-POB"/>
-                                    <constraint firstItem="e8H-2G-2Nk" firstAttribute="leading" secondItem="Apa-bu-e1Z" secondAttribute="leading" id="24v-fh-Aac"/>
-                                    <constraint firstAttribute="trailing" secondItem="BqY-Ua-j4n" secondAttribute="trailing" id="2nF-xX-Iwo"/>
-                                    <constraint firstAttribute="trailing" secondItem="e8H-2G-2Nk" secondAttribute="trailing" id="8mK-E0-DVg"/>
-                                    <constraint firstAttribute="trailing" secondItem="bdK-my-nCR" secondAttribute="trailing" id="Y4z-SP-ie2"/>
-                                    <constraint firstItem="bdK-my-nCR" firstAttribute="leading" secondItem="Apa-bu-e1Z" secondAttribute="leading" id="ZPu-Rc-Sqk"/>
-                                    <constraint firstItem="IOA-fy-wBV" firstAttribute="leading" secondItem="Apa-bu-e1Z" secondAttribute="leading" id="j7j-hn-7ER"/>
-                                    <constraint firstAttribute="trailing" secondItem="IOA-fy-wBV" secondAttribute="trailing" id="ygh-22-bq8"/>
+                                    <constraint firstItem="IOA-fy-wBV" firstAttribute="trailing" secondItem="bdK-my-nCR" secondAttribute="trailing" id="2bH-uW-rCB"/>
+                                    <constraint firstAttribute="trailing" secondItem="BqY-Ua-j4n" secondAttribute="trailing" id="aCg-j7-h4z"/>
+                                    <constraint firstItem="BqY-Ua-j4n" firstAttribute="trailing" secondItem="e8H-2G-2Nk" secondAttribute="trailing" id="ny0-Fs-U9v"/>
+                                    <constraint firstItem="e8H-2G-2Nk" firstAttribute="trailing" secondItem="IOA-fy-wBV" secondAttribute="trailing" id="t92-41-HTu"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKK-wR-Sx5">
+                                <rect key="frame" x="20" y="30" width="60" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="RYT-jG-Mca"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelView:" destination="tGQ-uZ-DPt" eventType="touchUpInside" id="L39-VH-GjS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Eu-yO-OZk">
+                                <rect key="frame" x="520" y="30" width="60" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="41l-1P-qlh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToViewWithLock:" destination="tGQ-uZ-DPt" eventType="touchUpInside" id="8UI-2G-IcL"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Apa-bu-e1Z" secondAttribute="trailing" id="6SO-Vh-boR"/>
-                            <constraint firstItem="Apa-bu-e1Z" firstAttribute="leading" secondItem="QFR-gh-B1e" secondAttribute="leadingMargin" id="YLe-4D-TqG"/>
-                            <constraint firstItem="Apa-bu-e1Z" firstAttribute="top" secondItem="ujj-70-lyz" secondAttribute="bottom" constant="20" id="dpX-wD-5JJ"/>
+                            <constraint firstItem="5Eu-yO-OZk" firstAttribute="trailing" secondItem="Apa-bu-e1Z" secondAttribute="trailing" id="184-dt-NGT"/>
+                            <constraint firstItem="gKK-wR-Sx5" firstAttribute="baseline" secondItem="5Eu-yO-OZk" secondAttribute="baseline" id="5w1-iR-i7d"/>
+                            <constraint firstItem="gKK-wR-Sx5" firstAttribute="top" secondItem="ujj-70-lyz" secondAttribute="bottom" constant="10" id="FEc-rv-NXL"/>
+                            <constraint firstItem="5Eu-yO-OZk" firstAttribute="trailing" secondItem="QFR-gh-B1e" secondAttribute="trailingMargin" id="Gb2-qV-Jdr"/>
+                            <constraint firstItem="Apa-bu-e1Z" firstAttribute="top" secondItem="gKK-wR-Sx5" secondAttribute="bottom" constant="10" id="SgW-cQ-lG5"/>
+                            <constraint firstItem="gKK-wR-Sx5" firstAttribute="leading" secondItem="QFR-gh-B1e" secondAttribute="leadingMargin" id="cX5-ea-s6L"/>
+                            <constraint firstItem="gKK-wR-Sx5" firstAttribute="leading" secondItem="Apa-bu-e1Z" secondAttribute="leading" id="w4a-Go-c8I"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Lock" id="Fk5-55-5N5">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lhi-r0-qsy">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="takeAction:" destination="tGQ-uZ-DPt" id="l4v-gu-VzF"/>
-                                <segue destination="eLm-L3-YhZ" kind="unwind" identifier="unwindToList" unwindAction="unwindToList:" id="5tz-An-Pxr"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a3T-jL-6QF">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="takeAction:" destination="tGQ-uZ-DPt" id="gQh-Bs-gZz"/>
-                                <segue destination="eLm-L3-YhZ" kind="unwind" identifier="unwindToList" unwindAction="unwindToList:" id="qFr-Oc-GAn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="lhi-r0-qsy" id="6iD-O1-J3h"/>
+                        <outlet property="cancelButton" destination="gKK-wR-Sx5" id="kwJ-Q7-Pw5"/>
                         <outlet property="companyNameTextField" destination="BqY-Ua-j4n" id="ZFI-Eg-amh"/>
                         <outlet property="passwordTextField" destination="IOA-fy-wBV" id="xhr-Rv-kCc"/>
-                        <outlet property="saveButton" destination="a3T-jL-6QF" id="7St-YJ-j41"/>
+                        <outlet property="saveButton" destination="5Eu-yO-OZk" id="Ihw-Yl-Ya9"/>
                         <outlet property="urlTextField" destination="bdK-my-nCR" id="Ygx-oh-SU2"/>
                         <outlet property="userNameTextField" destination="e8H-2G-2Nk" id="Nbf-i5-vmo"/>
+                        <segue destination="eLm-L3-YhZ" kind="unwind" identifier="unwindToDetailView" unwindAction="unwindToDetailView:" id="QxF-q1-7Ae"/>
+                        <segue destination="eLm-L3-YhZ" kind="unwind" identifier="unwindToList" unwindAction="unwindToList:" id="gTq-SH-e5t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PV0-8H-vVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eLm-L3-YhZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2293" y="-630"/>
-        </scene>
-        <!--Add Lock Nav Controller-->
-        <scene sceneID="NcR-RB-cAL">
-            <objects>
-                <navigationController title="Add Lock Nav Controller" id="Q8B-hC-16A" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dKY-Zw-p1W">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0014104155070000001" green="0.62371794869999997" blue="0.3900077609" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="tGQ-uZ-DPt" kind="relationship" relationship="rootViewController" id="yfl-e3-LVE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EOg-1E-hLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1475" y="-630"/>
+            <point key="canvasLocation" x="1373" y="-630"/>
         </scene>
         <!--Detail View Nav Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -413,135 +430,90 @@
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
-        <!--Edit Lock View Controller-->
-        <scene sceneID="nq2-8h-m2h">
+        <!--PinCodeSetView-->
+        <scene sceneID="v7S-Pg-arL">
             <objects>
-                <viewController title="Edit Lock View Controller" id="Qn7-Ef-eSd" customClass="EditLockViewController" customModule="LockNKey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PinCodeSetView" title="PinCodeSetView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x1P-NQ-Vez" customClass="PinSetViewController" customModule="LockNKey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bsF-E4-9va"/>
-                        <viewControllerLayoutGuide type="bottom" id="7J7-jY-6ha"/>
+                        <viewControllerLayoutGuide type="top" id="nC0-GY-h7Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="4dx-Af-Aii"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PE3-Xc-Ozk">
+                    <view key="view" contentMode="scaleToFill" id="H3Z-N4-l2f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K7D-wf-X1X">
-                                <rect key="frame" x="20" y="84" width="560" height="260"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl5-4c-VLJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yy-iG-T70">
-                                        <rect key="frame" x="0.0" y="29" width="560" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0k9-uI-83I">
-                                        <rect key="frame" x="0.0" y="67" width="88" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G4e-eq-pkA">
-                                        <rect key="frame" x="0.0" y="96" width="560" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gj-AF-BHP">
-                                        <rect key="frame" x="0.0" y="134" width="83" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q9G-XJ-zis">
-                                        <rect key="frame" x="0.0" y="163" width="560" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Url:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRT-Z7-y3W">
-                                        <rect key="frame" x="0.0" y="201" width="29" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login Url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zKc-qh-GFe">
-                                        <rect key="frame" x="0.0" y="230" width="560" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pin" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MDW-1t-IDR">
+                                <rect key="frame" x="200" y="90" width="200" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="G4e-eq-pkA" secondAttribute="trailing" id="8yM-Q5-c69"/>
-                                    <constraint firstAttribute="trailing" secondItem="zKc-qh-GFe" secondAttribute="trailing" id="DDO-vf-uXL"/>
-                                    <constraint firstItem="2yy-iG-T70" firstAttribute="leading" secondItem="K7D-wf-X1X" secondAttribute="leading" id="JMD-CM-kjp"/>
-                                    <constraint firstItem="Q9G-XJ-zis" firstAttribute="leading" secondItem="K7D-wf-X1X" secondAttribute="leading" id="NzK-bm-tNv"/>
-                                    <constraint firstItem="G4e-eq-pkA" firstAttribute="leading" secondItem="K7D-wf-X1X" secondAttribute="leading" id="XSr-n6-OHL"/>
-                                    <constraint firstItem="zKc-qh-GFe" firstAttribute="leading" secondItem="K7D-wf-X1X" secondAttribute="leading" id="bgO-dd-Cxl"/>
-                                    <constraint firstAttribute="trailing" secondItem="2yy-iG-T70" secondAttribute="trailing" id="h5u-dp-IgS"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q9G-XJ-zis" secondAttribute="trailing" id="t4r-Bw-Tnj"/>
+                                    <constraint firstAttribute="height" constant="40" id="qR3-oC-pHZ"/>
+                                    <constraint firstAttribute="width" constant="200" id="src-48-MIa"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pin Again" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="esf-k2-kAj">
+                                <rect key="frame" x="200" y="150" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8gp-O2-yeF"/>
+                                    <constraint firstAttribute="width" constant="200" id="jSu-JJ-CeL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaw-eO-NI4">
+                                <rect key="frame" x="268" y="210" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E9r-oz-2yA"/>
+                                    <constraint firstAttribute="width" constant="65" id="YGD-40-GU8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a 4 digit pin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlK-9q-8OS">
+                                <rect key="frame" x="200" y="50" width="200" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Ny3-ir-Iqb"/>
+                                    <constraint firstAttribute="width" constant="200" id="WQM-X6-pMo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="K7D-wf-X1X" firstAttribute="leading" secondItem="PE3-Xc-Ozk" secondAttribute="leadingMargin" id="9Iy-xJ-Q1M"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K7D-wf-X1X" secondAttribute="trailing" id="dwP-uH-N1H"/>
-                            <constraint firstItem="K7D-wf-X1X" firstAttribute="top" secondItem="bsF-E4-9va" secondAttribute="bottom" constant="20" id="uAc-sK-Ll6"/>
+                            <constraint firstItem="MDW-1t-IDR" firstAttribute="centerX" secondItem="H3Z-N4-l2f" secondAttribute="centerX" id="4Qh-ka-b5d"/>
+                            <constraint firstItem="MDW-1t-IDR" firstAttribute="top" secondItem="hlK-9q-8OS" secondAttribute="bottom" constant="20" id="5q3-ZJ-XNg"/>
+                            <constraint firstItem="hlK-9q-8OS" firstAttribute="top" secondItem="nC0-GY-h7Q" secondAttribute="bottom" constant="30" id="DDY-Lg-iPS"/>
+                            <constraint firstItem="vaw-eO-NI4" firstAttribute="centerX" secondItem="H3Z-N4-l2f" secondAttribute="centerX" id="V33-k8-cLj"/>
+                            <constraint firstItem="esf-k2-kAj" firstAttribute="centerX" secondItem="H3Z-N4-l2f" secondAttribute="centerX" id="WAu-TG-snx"/>
+                            <constraint firstItem="esf-k2-kAj" firstAttribute="top" secondItem="MDW-1t-IDR" secondAttribute="bottom" constant="20" id="fbh-uV-f5k"/>
+                            <constraint firstItem="hlK-9q-8OS" firstAttribute="centerX" secondItem="H3Z-N4-l2f" secondAttribute="centerX" id="m9L-h0-LiQ"/>
+                            <constraint firstItem="vaw-eO-NI4" firstAttribute="top" secondItem="esf-k2-kAj" secondAttribute="bottom" constant="20" id="oeC-zK-h88"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Lock" id="7o0-ef-wlX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NQy-4i-W0D">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="takeAction:" destination="Qn7-Ef-eSd" id="YII-Dg-2MI"/>
-                                <segue destination="r8v-K6-EPV" kind="unwind" identifier="unwindToDetailView" unwindAction="unwindToDetailView:" id="LYG-ki-oxT"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="d8t-z6-K9I">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="takeAction:" destination="Qn7-Ef-eSd" id="5VM-BB-9ba"/>
-                                <segue destination="r8v-K6-EPV" kind="unwind" identifier="unwindToDetailView" unwindAction="unwindToDetailView:" id="CnS-KV-Jbl"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="NQy-4i-W0D" id="dl6-Gc-Nby"/>
-                        <outlet property="companyNameTextField" destination="2yy-iG-T70" id="lP1-Wh-bfH"/>
-                        <outlet property="passwordTextField" destination="Q9G-XJ-zis" id="Y6G-8t-yQb"/>
-                        <outlet property="saveButton" destination="d8t-z6-K9I" id="Jfy-HZ-aj3"/>
-                        <outlet property="urlTextField" destination="zKc-qh-GFe" id="kwD-bs-3ay"/>
-                        <outlet property="userNameTextField" destination="G4e-eq-pkA" id="nkC-Zc-8um"/>
+                        <outlet property="doneButton" destination="vaw-eO-NI4" id="JE3-TN-9rK"/>
+                        <outlet property="mainLabel" destination="hlK-9q-8OS" id="D5i-4V-Gsr"/>
+                        <outlet property="pinTextField1" destination="MDW-1t-IDR" id="JzJ-Nd-D2S"/>
+                        <outlet property="pinTextField2" destination="esf-k2-kAj" id="GBU-i0-Z5S"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ukv-ib-cSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="r8v-K6-EPV" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBB-oc-s88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2293" y="129"/>
-        </scene>
-        <!--Edit View Nav Controller-->
-        <scene sceneID="NOh-C9-iC7">
-            <objects>
-                <navigationController title="Edit View Nav Controller" automaticallyAdjustsScrollViewInsets="NO" id="aue-Lc-hGn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aoZ-MC-re2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Qn7-Ef-eSd" kind="relationship" relationship="rootViewController" id="s80-Dm-3WU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5jv-zP-6ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1475" y="129"/>
+            <point key="canvasLocation" x="-1635" y="110"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

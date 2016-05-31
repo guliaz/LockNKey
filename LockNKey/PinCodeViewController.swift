@@ -13,21 +13,31 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate {
     // MARK : Properties
     var isValidPin:Bool = false
     
+    var isAfterLoad = false;
+    var pin = ""
+    
     @IBOutlet weak var pinCodeTextField: UITextField!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cancelButton.layer.borderColor = UIColor.whiteColor().CGColor
-        cancelButton.addTarget(self, action: #selector(cancelView), forControlEvents: UIControlEvents.TouchUpInside)
+        doneButton.layer.borderColor = UIColor.whiteColor().CGColor
+        if(isAfterLoad){
+            cancelButton.enabled = false
+        } else {
+            cancelButton.layer.borderColor = UIColor.whiteColor().CGColor
+            cancelButton.addTarget(self, action: #selector(cancelView), forControlEvents: UIControlEvents.TouchUpInside)
+        }
+        doneButton.addTarget(self, action: #selector(validatePin), forControlEvents: UIControlEvents.TouchUpInside)
         isValidPin = false
         pinCodeTextField.delegate = self
         pinCodeTextField.becomeFirstResponder()
-        
     }
     
     // MARK: Button method
     func cancelView(sender:UIButton) {
+        pinCodeTextField.resignFirstResponder()
         goBackToDetailView()
     }
     
@@ -48,32 +58,45 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        if(textField.text! != "" && textField.text!.characters.count==4){
-            textField.resignFirstResponder()
-        }
-        validatePin(textField.text!, textField: textField)
-    }
+    //    func textFieldDidBeginEditing(textField: UITextField) {
+    //        if(textField.text! != "" && textField.text!.characters.count==4){
+    //            textField.resignFirstResponder()
+    //        }
+    //        validatePin(textField.text!, textField: textField)
+    //    }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        if(textField.text! != "" && textField.text!.characters.count==4){
-            textField.resignFirstResponder()
+        if(textField.text! != "" && textField.text!.characters.count == 4){
+            if(textField == pinCodeTextField){
+                pin = textField.text!
+            }
         }
-        validatePin(textField.text!, textField: textField)
     }
     
     // MARK : Logic methods
-    
     
     func goBackToDetailView()  {
         self.performSegueWithIdentifier("unwindToDetailViewFromPin", sender: self)
     }
     
-    func validatePin(pinText:String, textField: UITextField){
-        if(pinText != "" && pinText.characters.count==4 && pinText == LockNKeyStore.sharedInstance.getPin()){
-            textField.resignFirstResponder()
+    func goToSplitView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        // MasterController | SplitViewController
+        let vc: UISplitViewController = storyboard.instantiateViewControllerWithIdentifier("SplitViewController") as! UISplitViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func validatePin(){
+        pinCodeTextField.resignFirstResponder()
+        if(pin != "" && pin.characters.count==4 && pin == LockNKeyStore.sharedInstance.getPin()){
             self.isValidPin = true
-            goBackToDetailView()
+            if(isAfterLoad){
+                goToSplitView()
+            } else {
+                goBackToDetailView()
+            }
+        } else {
+            
         }
     }
 }
